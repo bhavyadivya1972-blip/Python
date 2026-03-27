@@ -1,7 +1,7 @@
-base_price = 15
-age = 21
-seat_type = 'Gold'
-show_time = 'Evening'
+base_price = int(input("Enter the base price: "))
+age = int(input("Enter your age: "))
+seat_type = input("Enter seat type: ")
+show_time = input("Enter show time: ")
 
 if age > 17:
     print('User is eligible to book a ticket')
@@ -11,20 +11,20 @@ if age >= 21:
 else:
     print('User is not eligible for Evening shows')
 
-is_member = False
-is_weekend = False
+is_member = bool(input("Enter True or False: "))
+is_weekend = bool(input("Enter True or False: "))
 
-discount = 0
+discount = int(input("Enter the discount: "))
 if is_member and age >= 21:
-    discount = 3
+    discount = int(input("Enter the discount: "))
     print('User qualifies for membership discount')
 else:
     print('User does not qualify for membership discount')
 print('Discount:', discount)
 
-extra_charges = 0
+extra_charges = int(input("Enter the extra charges: "))
 if is_weekend or show_time == 'Evening':
-    extra_charges = 2
+    extra_charges = int(input("Enter the extra charges: "))
     print('Extra charges will be applied')
 else:
     print('No extra charges will be applied')
@@ -33,7 +33,7 @@ print('Extra charges:', extra_charges)
 if age >= 21 or age >= 18 and (show_time != 'Evening' or is_member):
     print('Ticket booking condition satisfied')
 
-    service_charges = 0
+    service_charges = int(input("Enter the service charges: "))
     if seat_type == 'Premium':
         service_charges = 5
     elif seat_type == 'Gold':
